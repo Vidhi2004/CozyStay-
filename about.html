@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CozyStay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        .availability-form{
+          margin-top: -50px;
+          z-index: 2;
+          position: relative;
+        }
+
+        @media screen and (max-width: 575px){
+          .availability-form{
+            margin-top: 25px;
+            padding: 0 35px;
+          }
+        }
+        .box:hover{
+          border-top-color: #279e8c !important;
+        }
+
+    </style>
+</head>
+<body class="bg-light">
+    
+  <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.html">CozyStay</a>
+      <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active me-2" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" href="Rooms.html">Rooms</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link me-2" href="facilities.html">Facilities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-2" href="contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+         
+        </ul>
+        <div class="d-flex">
+          <button type="button" class="btn btn-outline-dark shadow-none me-lg-2 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+              Login
+          </button>
+          <button type="button" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#registerModal">
+            Register
+        </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+          <div class="modal-content">
+              <form>
+              <div class="modal-header">
+              <h5 class="modal-title d-flex align-items-center" >
+                  <i class="bi bi-person-circle fs-3 me-2"></i> User Login
+              </h5>
+              <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label class="form-label">Email address</label>
+                    <input type="email" class="form-control shadow-none" >
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control shadow-none" >
+                  </div>
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                <button type="submit" class="ms-2 mt-2 btn btn-dark shadow-none">Login</button>
+                <a href="javascript: void(0)" class="text-secondary text-decoration-none">Forgot password?</a>
+              </div>
+            </div>
+              </form>
+          </div>
+          </div>
+  </div>
+         
+  <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form>
+            <div class="modal-header">
+            <h5 class="modal-title d-flex align-items-center" >
+              <i class="bi bi-person-lines-fill fs-3 me-2"></i>
+                User Registration
+            </h5>
+            <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+              <div class="modal-body">
+                <span class="badge rounded-pill bg-light text-dark mb-3 text-wrap lh-base">
+                  Note: Your details must match with your ID(Aadhaar card, passport, driving license, etc.)
+                  that will be required during check-in.
+                </span>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-6 ps-0 mb-3">
+                      <label class="form-label">Name</label>
+                      <input type="text" class="form-control shadow-none" >
+                    </div>
+                    <div class="col-md-6 p-0 mb-3">
+                      <label class="form-label">Email</label>
+                      <input type="email" class="form-control shadow-none" >
+                    </div>
+                    <div class="col-md-6 ps-0 mb-3">
+                      <label class="form-label">Phone Number</label>
+                      <input type="number" class="form-control shadow-none" >
+                    </div>
+                    <div class="col-md-6 p-0 mb-3">
+                      <label class="form-label">Picture</label>
+                      <input type="file" class="form-control shadow-none" >
+                    </div>
+                    <div class="col-md-12 p-0 mb-3">
+                      <label class="form-label">Address</label>
+                      <textarea class="form-control shadow-none" rows="1"></textarea>
+                    </div>
+                    <div class="col-md-6 ps-0 mb-3">
+                      <label class="form-label">Pincode</label>
+                      <input type="number" class="form-control shadow-none" >
+                    </div>
+                    <div class="col-md-6 p-0 mb-3">
+                      <label class="form-label">Date of Birth</label>
+                      <input type="Date" class="form-control shadow-none" >
+                    </div>
+                    <div class="col-md-6 ps-0 mb-3">
+                      <label class="form-label">Password</label>
+                      <input type="password" class="form-control shadow-none" >
+                    </div>
+                    <div class="col-md-6 p-0 mb-3">
+                      <label class="form-label">Confirm Password</label>
+                      <input type="password" class="form-control shadow-none" >
+                    </div>
+  
+                  </div>
+                </div>
+                <div class="text-center my-1">
+                  <button type="submit" class="btn btn-dark shadow-none">REGISTER</button>
+                </div>
+          </div>
+            </form>
+        </div>
+        </div>
+  </div>
+
+<div class="my-5 px-4">
+<h2 class="fw-bold h-font text-center">ABOUT US</h2>
+  <div class="h-line bg-dark"></div>
+    <p class="text-center mt-3 p-2">
+      Our elegantly designed rooms and suites provide a serene escape with stunning views, state-of-the-art amenities, and personalized service. <br>Enjoy gourmet dining at our award-winning restaurant. Whether you're here for business or leisure, CozyStay Hotel promises an unforgettable experience, <br>blending modern elegance with timeless charm. Join us and discover why we are the preferred choice for discerning travelers.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-md-1 order-2">
+        <h3 class="mb-3">Josephine Pinto</h3>
+        <p>
+          Meet Josephine Pinto, the dynamic owner and manager of the prestigious CozyStay Hotel. Josephine combines his passion for exceptional service with a keen eye for detail to create an unforgettable experience for every guest. Under his leadership, CozyStay has become renowned for its luxurious accommodations, personalized services, and serene oceanfront views. Josephine's dedication to excellence has earned the hotel numerous accolades and a loyal clientele who appreciate his commitment to making every stay extraordinary.
+        </p>
+      </div>
+      <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">
+        <img src="https://cinimage.org/wp-content/uploads/2021/10/Testimonial-Videos-1.png" class="w-80">
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4 px-4">
+        <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
+          <img src="https://raw.githubusercontent.com/tj-webdev/Hotel-Booking-Website-Assets/d6bf68d418148c501c715cbced1e6c5832082481/images/about/hotel.svg" width="70px">
+          <h4 class="mt-3">100+ ROOMS</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4 px-4">
+        <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
+          <img src="https://raw.githubusercontent.com/tj-webdev/Hotel-Booking-Website-Assets/d6bf68d418148c501c715cbced1e6c5832082481/images/about/customers.svg" width="70px">
+          <h4 class="mt-3">200+ CUSTOMERS</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4 px-4">
+        <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
+          <img src="https://raw.githubusercontent.com/tj-webdev/Hotel-Booking-Website-Assets/d6bf68d418148c501c715cbced1e6c5832082481/images/about/rating.svg" width="70px">
+          <h4 class="mt-3">150+ REVIEWS</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4 px-4">
+        <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
+          <img src="https://raw.githubusercontent.com/tj-webdev/Hotel-Booking-Website-Assets/d6bf68d418148c501c715cbced1e6c5832082481/images/about/staff.svg" width="70px">
+          <h4 class="mt-3">200+ STAFF</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<h3 class="my-5 fw-bold h-font text-center">MANAGEMENT TEAM</h3>
+
+<div class="container px-4"></div>
+<!-- Swiper -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper mb-5">
+    <div class="swiper-slide text-center overflow-hidden rounded ">
+      <img src="https://thumbs.dreamstime.com/b/vertical-individual-portrait-blonde-caucasian-young-adult-woman-looking-serious-camera-pretty-teenage-student-girl-staring-282662860.jpg" class="w-50">
+      <h5 class="mt-2">Jessica Ciao</h5>
+    </div>
+    <div class="swiper-slide text-center overflow-hidden rounded">
+      <img src="https://images.unsplash.com/photo-1592009309602-1dde752490ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="w-50">
+      <h5 class="mt-2">John Smith</h5>
+    </div>
+    <div class="swiper-slide text-center overflow-hidden rounded">
+      <img src="https://c.pxhere.com/photos/44/dc/smiling_boy_man_professional_happy_people_young_portrait-865531.jpg!d" class="w-50">
+      <h5 class="mt-2">Ram Patil</h5>
+    </div>
+    <div class="swiper-slide text-center overflow-hidden rounded">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/15345c41332353.57a1ce9141249.jpg" class="w-50">
+      <h5 class="mt-2">Sonia Shet</h5>
+    </div>
+    <div class="swiper-slide text-center overflow-hidden rounded">
+      <img src="https://spratx.com/wp-content/uploads/2018/01/Testimonial-Man.jpg" class="w-50">
+      <h5 class="mt-2">Warner Fernandes</h5>
+    </div>
+    <div class="swiper-slide text-center overflow-hidden rounded">
+      <img src="https://img.freepik.com/premium-photo/vertical-individual-portrait-serious-mature-businessman-looking-pensive-camera-workplace_639864-647.jpg" class="w-50">
+      <h5 class="mt-2">Siwet Sharma</h5>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+  <div class="container-fluid bg-white mt-5">
+    <div class="row">
+      <div class="col-lg-4 p-4">
+        <h3  class="h-font fw-bold fs-3 mb-2">CozyStay</h3>
+        <p>
+          Our elegantly designed rooms and suites provide a serene escape with stunning views, state-of-the-art amenities, 
+          and personalized service. Enjoy gourmet dining at our award-winning restaurant. Whether you're here for business or leisure, 
+          CozyStay Hotel promises an unforgettable experience, blending modern elegance with timeless charm. 
+          Join us and discover why we are the preferred choice for discerning travelers.
+        </p>
+      </div>
+      <div class="col-lg-4 p-4">
+        <h5 class="mb-3">Links</h5>
+        <a href="index.html" class="d-inline-block mb-2 text-dark text-decoration-none">Home</a> <br>
+        <a href="Rooms.html" class="d-inline-block mb-2 text-dark text-decoration-none">Rooms</a> <br>
+        <a href="facilities.html" class="d-inline-block mb-2 text-dark text-decoration-none">Facilities</a> <br>
+        <a href="contact.html" class="d-inline-block mb-2 text-dark text-decoration-none">Contact Us</a> <br>
+        <a href="about.html" class="d-inline-block mb-2 text-dark text-decoration-none">About</a>
+      </div>
+      <div class="col-lg-4 p-4">
+        <h5 class="mb-3">Follow us</h5>
+        <a href="https://x.com/?lang=en-in" class="d-inline-block text-dark text-decoration-none mb-2">
+          <i class="bi bi-twitter me-1"></i>Twitter
+        </a><br>
+        <a href="https://www.facebook.com/" class="d-inline-block text-dark text-decoration-none mb-2">
+          <i class="bi bi-facebook me-1"></i>Facebook
+        </a><br>
+        <a href="https://www.instagram.com/?hl=en" class="d-inline-block text-dark text-decoration-none">
+          <i class="bi bi-instagram me-1"></i>Instagram
+        </a><br>
+      </div>
+    </div>
+  </div>
+
+  <h6 class="text-center bg-dark text-white p-3 m-0">Visit Again!</h6>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        }
+      });
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 5,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+      }
+      });
+    </script>
+</body>
+</html>
